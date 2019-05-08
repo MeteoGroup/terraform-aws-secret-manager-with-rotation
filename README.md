@@ -1,5 +1,5 @@
 This module will create all the resources to store and rotate a MySQL or Aurora password using the AWS Secrets Manager service.
-It is heavily based on the code [here:](https://github.com/giuseppeborgese/terraform-aws-secret-manager-with-rotation)
+It is a copy of the repo [here](https://github.com/giuseppeborgese/terraform-aws-secret-manager-with-rotation) by Giuseppe Borgese with some very small modifications.
 
 # Prerequisites
 * A VPC with private subnets and accessibilty to AWS Secrets Manager Endpoint, see below for more details.

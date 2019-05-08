@@ -12,7 +12,9 @@ variable "rotation_days" {
   description = "How often in days the secret will be rotated"
 }
 
-variable "lambda_subnets" {}
+variable "lambda_subnets" {
+  type = "list"
+}
 
 variable "mysql_username" {}
 
@@ -30,7 +32,9 @@ variable "mysql_dbInstanceIdentifier" {
   description = "The RDS Identifier in the webconsole"
 }
 
-variable "tags" {}
+variable "tags" {
+  type = "map"
+}
 
 /* Not yet available
 variable "additional_kms_role_arn" {
