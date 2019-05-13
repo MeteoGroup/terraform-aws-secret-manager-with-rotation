@@ -104,7 +104,7 @@ resource "aws_lambda_function" "rotate-code-mysql" {
   runtime          = "python2.7"
 
   vpc_config {
-    subnet_ids         = "${var.lambda_subnets}"
+    subnet_ids         = ["${var.lambda_subnets}"]
     security_group_ids = ["${aws_security_group.lambda.id}"]
   }
 
@@ -150,7 +150,8 @@ resource "aws_kms_key" "secret" {
       "Effect": "Allow",
       "Principal": {
         "AWS": [
-          "${aws_iam_role.lambda_rotation.arn}"
+          "${aws_iam_role.lambda_rotation.arn}",
+          "${data.aws_caller_identity.current.arn}"
         ]
       },
       "Action": [
