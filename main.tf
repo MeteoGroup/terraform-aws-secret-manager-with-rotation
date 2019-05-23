@@ -203,6 +203,8 @@ resource "aws_secretsmanager_secret" "secret" {
     automatically_after_days = "${var.rotation_days}"
   }
 
+  recovery_window_in_days = "${var.force_delete == 1 ? 0 : 7}"
+
   tags = "${var.tags}"
 }
 

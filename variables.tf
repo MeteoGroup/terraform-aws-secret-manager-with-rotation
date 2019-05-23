@@ -44,3 +44,6 @@ variable "additional_kms_role_arn" {
 }
 */
 
+variable "force_delete" {
+  default = 0
+}
